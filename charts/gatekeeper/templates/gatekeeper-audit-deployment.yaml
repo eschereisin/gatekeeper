@@ -80,11 +80,9 @@ spec:
         resources: 
 {{ toYaml .Values.audit.resources | indent 10 }}
         securityContext:
-          allowPrivilegeEscalation: false
           capabilities:
             drop:
             - all
-          readOnlyRootFilesystem: true
           runAsGroup: 999
           runAsNonRoot: true
           runAsUser: 1000
